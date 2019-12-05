@@ -22,3 +22,4 @@ sub_project1-3: $(OBJ3)
 clean:
 	rm sub_project1-1
 	rm sub_project1-2
+	rm sub_project1-3

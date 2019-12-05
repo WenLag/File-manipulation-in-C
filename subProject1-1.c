@@ -5,7 +5,7 @@ off_t fsize(const char *filename);
 int main (int argc, char **argv) {
 
     int filedesc = open("ANNA_KARENINA.txt",  O_RDONLY);
-    //printf("%lu",fsize("ANNA_KARENINA.txt"));
+
     unsigned char buffer[fsize("ANNA_KARENINA.txt")];
     if (filedesc == -1)
     {
@@ -17,7 +17,7 @@ int main (int argc, char **argv) {
     unsigned long k=0;
     char c;
       while ((bytes_read = read(filedesc, buffer, 1)) != 0) {
-        //printf("working till now:%lu \n" ,k);
+        
         c = buffer[0];
         if (islower(c)) {
           c = toupper(c);
@@ -32,7 +32,7 @@ int main (int argc, char **argv) {
         }
 
         buffer[(k++)+1] = c;
-        
+
     }
     printf("%s",buffer);
     filedesc = open("ANNA_KARENINA.txt", O_WRONLY);
